@@ -2,18 +2,18 @@
 
 int *busca_subvetor(int *vetor,int tam_v,int *sub,int tam_s){
 
-    int i,j;
+    int a,b;
 
-    for(i=0;i<=tam_v-tam_s;i++){
+    for(a=0;a<=tam_v-tam_s;a++){
 
-        for(j=0;j<tam_s;j++){
+        for(b=0;b<tam_s;b++){
 
-            if(*(vetor+i+j)!=*(sub+j))
+            if(*(vetor+a+b)!=*(sub+b))
                 break;
         }
 
-        if(j==tam_s)
-            return vetor+i;
+        if(b==tam_s)
+            return vetor+a;
     }
 
     return NULL;
@@ -21,17 +21,17 @@ int *busca_subvetor(int *vetor,int tam_v,int *sub,int tam_s){
 
 int main(){
 
-    int vetor[7]={1,2,3,4,5,6,7};
-    int sub[3]={3,4,5};
+    int vPrincipal[7]={1,2,3,4,5,6,7};
+    int vMenor[3]={3,4,5};
 
-    int *p;
+    int *pAchado;
 
-    p=busca_subvetor(vetor,7,sub,3);
+    pAchado=busca_subvetor(vPrincipal,7,vMenor,3);
 
-    if(p!=NULL)
-        printf("Subvetor encontrado: %d",*p);
+    if(pAchado!=NULL)
+        printf("Achei a sequencia a partir de: %d",*pAchado);
     else
-        printf("Subvetor nao encontrado");
+        printf("Sequencia nao encontrada");
 
     return 0;
 }
