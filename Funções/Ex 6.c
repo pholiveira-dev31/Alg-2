@@ -1,23 +1,23 @@
 #include <stdio.h>
 
-char conceito(float nota){
-    if(nota <= 4.9)
+char obterConceitoAluno(float valorNota){
+    if(valorNota <= 4.9f)
         return 'D';
-    else if(nota <= 6.9)
+    else if(valorNota <= 6.9f)
         return 'C';
-    else if(nota <= 8.9)
+    else if(valorNota <= 8.9f)
         return 'B';
     else
         return 'A';
 }
 
 int main(){
-    float nota;
+    float notaFinal;
 
-    printf("Digite a nota: ");
-    scanf("%f",&nota);
+    printf("Nota do aluno: ");
+    scanf("%f",&notaFinal);
 
-    printf("Conceito: %c",conceito(nota));
+    printf("Conceito obtido: %c",obterConceitoAluno(notaFinal));
 
     return 0;
 }
