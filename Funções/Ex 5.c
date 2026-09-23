@@ -1,29 +1,29 @@
 #include <stdio.h>
 
-int perfeito(int n){
-    int i,soma=0;
+int checaNumeroPerfeito(int valor){
+    int k,somaDiv=0;
 
-    for(i=1;i<n;i++){
-        if(n%i==0)
-            soma = soma+i;
+    for(k=1;k<valor;k++){
+        if(valor%k==0)
+            somaDiv = somaDiv+k;
     }
 
-    if(soma==n)
+    if(somaDiv==valor)
         return 1;
     else
         return 0;
 }
 
 int main(){
-    int n;
+    int num;
 
-    printf("Digite um numero: ");
-    scanf("%d",&n);
+    printf("Digite um valor inteiro: ");
+    scanf("%d",&num);
 
-    if(perfeito(n))
-        printf("Perfeito");
+    if(checaNumeroPerfeito(num))
+        printf("Eh um numero perfeito");
     else
-        printf("Nao perfeito");
+        printf("Nao eh um numero perfeito");
 
     return 0;
 }
