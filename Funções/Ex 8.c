@@ -1,21 +1,21 @@
 #include <stdio.h>
 
-int soma(int n){
-    int i,s=0;
+int somatorioAteN(int limite){
+    int x,somaAcumulada=0;
 
-    for(i=1;i<=n;i++)
-        s=s+i;
+    for(x=1;x<=limite;x++)
+        somaAcumulada=somaAcumulada+x;
 
-    return s;
+    return somaAcumulada;
 }
 
 int main(){
-    int n;
+    int numero;
 
-    printf("Digite n: ");
-    scanf("%d",&n);
+    printf("Digite o valor de N: ");
+    scanf("%d",&numero);
 
-    printf("Soma = %d",soma(n));
+    printf("Somatorio: %d",somatorioAteN(numero));
 
     return 0;
 }
