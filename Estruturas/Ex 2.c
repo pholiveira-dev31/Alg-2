@@ -7,32 +7,32 @@ float y;
 };
 
 struct Retangulo{
-struct Ponto superior;
-struct Ponto inferior;
+struct Ponto supEsq;
+struct Ponto infDir;
 };
 
 int main(){
-struct Retangulo r;
-float largura,altura,area,perimetro,diagonal;
+struct Retangulo ret;
+float base,altura,area,perimetro,diagonal;
 
 printf("X superior esquerdo: ");
-scanf("%f",&r.superior.x);
+scanf("%f",&ret.supEsq.x);
 
 printf("Y superior esquerdo: ");
-scanf("%f",&r.superior.y);
+scanf("%f",&ret.supEsq.y);
 
 printf("X inferior direito: ");
-scanf("%f",&r.inferior.x);
+scanf("%f",&ret.infDir.x);
 
 printf("Y inferior direito: ");
-scanf("%f",&r.inferior.y);
+scanf("%f",&ret.infDir.y);
 
-largura=fabs(r.inferior.x-r.superior.x);
-altura=fabs(r.superior.y-r.inferior.y);
+base=fabs(ret.infDir.x-ret.supEsq.x);
+altura=fabs(ret.supEsq.y-ret.infDir.y);
 
-area=largura*altura;
-perimetro=2*(largura+altura);
-diagonal=sqrt(largura*largura+altura*altura);
+area=base*altura;
+perimetro=2*(base+altura);
+diagonal=sqrt(base*base+altura*altura);
 
 printf("Area: %.2f\n",area);
 printf("Perimetro: %.2f\n",perimetro);
