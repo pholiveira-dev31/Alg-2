@@ -1,31 +1,31 @@
 #include <stdio.h>
 
-int *buscar(int *vetor,int tamanho,int x){
+int *procura_num(int *vet,int tam,int num){
 
-    int i;
+    int k;
 
-    for(i=0;i<tamanho;i++){
-        if(*(vetor+i)==x)
-            return vetor+i;
+    for(k=0;k<tam;k++){
+        if(*(vet+k)==num)
+            return vet+k;
     }
 
     return NULL;
 }
 
 int main(){
-    int vetor[5]={10,20,30,40,50};
-    int x;
-    int *p;
+    int dados[5]={10,20,30,40,50};
+    int valor;
+    int *ptr;
 
-    printf("Digite X: ");
-    scanf("%d",&x);
+    printf("Digite o valor X: ");
+    scanf("%d",&valor);
 
-    p=buscar(vetor,5,x);
+    ptr=procura_num(dados,5,valor);
 
-    if(p!=NULL)
-        printf("Encontrado: %d",*p);
+    if(ptr!=NULL)
+        printf("Valor encontrado: %d",*ptr);
     else
-        printf("Nao encontrado");
+        printf("Valor nao encontrado no vetor");
 
     return 0;
 }
