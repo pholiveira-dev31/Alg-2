@@ -1,27 +1,26 @@
 #include <stdio.h>
 
-float media(){
-    float n,soma=0;
-    int cont=0;
+float calculaMediaValores(){
+    float numEntrada,somaTotal=0;
+    int qtd=0;
 
-    printf("Digite os valores positivos\n");
-    printf("Digite 0 para parar\n");
+    printf("Digite numeros positivos (0 encerra):\n");
 
     do{
-        scanf("%f",&n);
+        scanf("%f",&numEntrada);
 
-        if(n>0){
-            soma = soma+n;
-            cont++;
+        if(numEntrada>0){
+            somaTotal = somaTotal+numEntrada;
+            qtd++;
         }
 
-    }while(n!=0);
+    }while(numEntrada!=0);
 
-    return soma/cont;
+    return somaTotal/qtd;
 }
 
 int main(){
-    printf("Media = %.2f",media());
+    printf("Resultado da media: %.2f",calculaMediaValores());
 
     return 0;
 }
