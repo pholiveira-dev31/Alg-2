@@ -7,34 +7,34 @@ int ano;
 };
 
 int main(){
-struct Data d1,d2;
-int dias1,dias2,diferenca;
+struct Data dataA,dataB;
+int totalA,totalB,diferenca;
 
-printf("Primeira data\n");
+printf("Data 1\n");
 printf("Dia: ");
-scanf("%d",&d1.dia);
+scanf("%d",&dataA.dia);
 printf("Mes: ");
-scanf("%d",&d1.mes);
+scanf("%d",&dataA.mes);
 printf("Ano: ");
-scanf("%d",&d1.ano);
+scanf("%d",&dataA.ano);
 
-printf("Segunda data\n");
+printf("Data 2\n");
 printf("Dia: ");
-scanf("%d",&d2.dia);
+scanf("%d",&dataB.dia);
 printf("Mes: ");
-scanf("%d",&d2.mes);
+scanf("%d",&dataB.mes);
 printf("Ano: ");
-scanf("%d",&d2.ano);
+scanf("%d",&dataB.ano);
 
-dias1=d1.ano*365+d1.mes*30+d1.dia;
-dias2=d2.ano*365+d2.mes*30+d2.dia;
+totalA=dataA.ano*365+dataA.mes*30+dataA.dia;
+totalB=dataB.ano*365+dataB.mes*30+dataB.dia;
 
-diferenca=dias1-dias2;
+diferenca=totalA-totalB;
 
 if(diferenca<0)
-diferenca=diferenca*-1;
+diferenca=-diferenca;
 
-printf("Dias entre as datas: %d\n",diferenca);
+printf("Dias decorridos entre as datas: %d\n",diferenca);
 
 return 0;
 }
