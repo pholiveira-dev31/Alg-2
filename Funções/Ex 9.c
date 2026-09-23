@@ -1,32 +1,32 @@
 #include <stdio.h>
 
-int fatorial(int n){
-    int i,f=1;
+int geraFatorial(int num){
+    int idx,fat=1;
 
-    for(i=1;i<=n;i++)
-        f=f*i;
+    for(idx=1;idx<=num;idx++)
+        fat=fat*idx;
 
-    return f;
+    return fat;
 }
 
-float calculo(int n){
-    int i;
-    float s=1;
+float somaSerie(int max){
+    int j;
+    float resultado=1.0f;
 
-    for(i=1;i<=n;i++){
-        s = s + 1.0/fatorial(i);
+    for(j=1;j<=max;j++){
+        resultado = resultado + 1.0f/geraFatorial(j);
     }
 
-    return s;
+    return resultado;
 }
 
 int main(){
-    int n;
+    int valorN;
 
-    printf("Digite N: ");
-    scanf("%d",&n);
+    printf("Valor de N: ");
+    scanf("%d",&valorN);
 
-    printf("S = %.2f",calculo(n));
+    printf("Valor da serie S = %.2f",somaSerie(valorN));
 
     return 0;
 }
