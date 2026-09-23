@@ -1,27 +1,28 @@
 #include <stdio.h>
 
-struct pessoa{
+struct DadosPessoa{
 char nome[50];
 int idade;
 char endereco[100];
 };
 
 int main(){
-struct pessoa a;
+struct DadosPessoa p;
 
-printf("Nome: ");
-fgets(a.nome,50,stdin);
+printf("Informe o nome: ");
+fgets(p.nome,50,stdin);
 
-printf("Idade: ");
+printf("Informe a idade: ");
 scanf("%d",&p.idade);
 getchar();
 
-printf("Endereco: ");
-fgets(a.endereco,100,stdin);
+printf("Informe o endereco: ");
+fgets(p.endereco,100,stdin);
 
-printf("\nNome: %s",a.nome);
-printf("Idade: %d\n",a.idade);
-printf("Endereco: %s",a.endereco);
+printf("\n--- DADOS ---\n");
+printf("Nome: %s",p.nome);
+printf("Idade: %d\n",p.idade);
+printf("Endereco: %s",p.endereco);
 
 return 0;
 }
