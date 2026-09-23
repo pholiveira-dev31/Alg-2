@@ -2,30 +2,30 @@
 
 void inverte_vetor(int *vetor,int tamanho){
 
-    int *inicio=vetor;
-    int *fim=vetor+tamanho-1;
-    int aux;
+    int *pInicio=vetor;
+    int *pFim=vetor+tamanho-1;
+    int temp;
 
-    while(inicio<fim){
+    while(pInicio<pFim){
 
-        aux=*inicio;
-        *inicio=*fim;
-        *fim=aux;
+        temp=*pInicio;
+        *pInicio=*pFim;
+        *pFim=temp;
 
-        inicio++;
-        fim--;
+        pInicio++;
+        pFim--;
     }
 }
 
 int main(){
 
-    int vetor[5]={1,2,3,4,5};
-    int *p;
+    int v[5]={1,2,3,4,5};
+    int *pt;
 
-    inverte_vetor(vetor,5);
+    inverte_vetor(v,5);
 
-    for(p=vetor;p<vetor+5;p++)
-        printf("%d ",*p);
+    for(pt=v;pt<v+5;pt++)
+        printf("%d ",*pt);
 
     return 0;
 }
