@@ -1,32 +1,32 @@
 #include <stdio.h>
 
-float calculadora(float a,float b,char op){
-    if(op=='+')
-        return a+b;
-    else if(op=='-')
-        return a-b;
-    else if(op=='*')
-        return a*b;
-    else if(op=='/')
-        return a/b;
+float efetuaConta(float num1,float num2,char operacao){
+    if(operacao=='+')
+        return num1+num2;
+    else if(operacao=='-')
+        return num1-num2;
+    else if(operacao=='*')
+        return num1*num2;
+    else if(operacao=='/')
+        return num1/num2;
 
     return 0;
 }
 
 int main(){
-    float a,b;
+    float val1,val2;
     char op;
 
-    printf("Digite o primeiro valor: ");
-    scanf("%f",&a);
+    printf("Valor 1: ");
+    scanf("%f",&val1);
 
-    printf("Digite o segundo valor: ");
-    scanf("%f",&b);
+    printf("Valor 2: ");
+    scanf("%f",&val2);
 
-    printf("Digite a operacao: ");
+    printf("Operador (+, -, *, /): ");
     scanf(" %c",&op);
 
-    printf("Resultado: %.2f",calculadora(a,b,op));
+    printf("Resultado final: %.2f",efetuaConta(val1,val2,op));
 
     return 0;
 }
