@@ -1,19 +1,19 @@
 #include <stdio.h>
 
-struct Data{
+struct DataNasc{
 int dia;
 int mes;
 int ano;
 };
 
-struct Pessoa{
+struct CadastroPessoa{
 char nome[50];
-struct Data nascimento;
+struct DataNasc data;
 };
 
 int main(){
-struct Pessoa p[6];
-int i,maisNova=0,maisVelha=0;
+struct CadastroPessoa p[6];
+int i,idNova=0,idVelha=0;
 
 for(i=0;i<6;i++){
 printf("Pessoa %d\n",i+1);
@@ -21,34 +21,36 @@ printf("Pessoa %d\n",i+1);
 printf("Nome: ");
 scanf(" %[^\n]",p[i].nome);
 
-printf("Dia: ");
-scanf("%d",&p[i].nascimento.dia);
+printf("Dia nasc: ");
+scanf("%d",&p[i].data.dia);
 
-printf("Mes: ");
-scanf("%d",&p[i].nascimento.mes);
+printf("Mes nasc: ");
+scanf("%d",&p[i].data.mes);
 
-printf("Ano: ");
-scanf("%d",&p[i].nascimento.ano);
+printf("Ano nasc: ");
+scanf("%d",&p[i].data.ano);
 }
 
 for(i=1;i<6;i++){
-if(p[i].nascimento.ano>p[maisNova].nascimento.ano)
-maisNova=i;
-else if(p[i].nascimento.ano==p[maisNova].nascimento.ano && p[i].nascimento.mes>p[maisNova].nascimento.mes)
-maisNova=i;
-else if(p[i].nascimento.ano==p[maisNova].nascimento.ano && p[i].nascimento.mes==p[maisNova].nascimento.mes && p[i].nascimento.dia>p[maisNova].nascimento.dia)
-maisNova=i;
+// checa quem nasceu depois (mais nova)
+if(p[i].data.ano>p[idNova].data.ano)
+idNova=i;
+else if(p[i].data.ano==p[idNova].data.ano && p[i].data.mes>p[idNova].data.mes)
+idNova=i;
+else if(p[i].data.ano==p[idNova].data.ano && p[i].data.mes==p[idNova].data.mes && p[i].data.dia>p[idNova].data.dia)
+idNova=i;
 
-if(p[i].nascimento.ano<p[maisVelha].nascimento.ano)
-maisVelha=i;
-else if(p[i].nascimento.ano==p[maisVelha].nascimento.ano && p[i].nascimento.mes<p[maisVelha].nascimento.mes)
-maisVelha=i;
-else if(p[i].nascimento.ano==p[maisVelha].nascimento.ano && p[i].nascimento.mes==p[maisVelha].nascimento.mes && p[i].nascimento.dia<p[maisVelha].nascimento.dia)
-maisVelha=i;
+// checa quem nasceu antes (mais velha)
+if(p[i].data.ano<p[idVelha].data.ano)
+idVelha=i;
+else if(p[i].data.ano==p[idVelha].data.ano && p[i].data.mes<p[idVelha].data.mes)
+idVelha=i;
+else if(p[i].data.ano==p[idVelha].data.ano && p[i].data.mes==p[idVelha].data.mes && p[i].data.dia<p[idVelha].data.dia)
+idVelha=i;
 }
 
-printf("Mais nova: %s\n",p[maisNova].nome);
-printf("Mais velha: %s\n",p[maisVelha].nome);
+printf("Pessoa mais nova: %s\n",p[idNova].nome);
+printf("Pessoa mais velha: %s\n",p[idVelha].nome);
 
 return 0;
 }
