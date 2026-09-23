@@ -1,49 +1,47 @@
 #include <stdio.h>
 
-struct Aluno{
+struct FichaAluno{
 int matricula;
-char nome[50];
-float nota1;
-float nota2;
-float nota3;
+char nomeAluno[50];
+float n1;
+float n2;
+float n3;
 };
 
 int main(){
-struct Aluno a[5];
-int i,maior=0;
+struct FichaAluno turma[5];
+int i,posMaior=0;
 float media,maiorMedia=0;
 
 for(i=0;i<5;i++){
 printf("Aluno %d\n",i+1);
 
 printf("Matricula: ");
-scanf("%d",&a[i].matricula);
+scanf("%d",&turma[i].matricula);
 
 printf("Nome: ");
-scanf(" %[^\n]",a[i].nome);
+scanf(" %[^\n]",turma[i].nomeAluno);
 
 printf("Nota 1: ");
-scanf("%f",&a[i].nota1);
+scanf("%f",&turma[i].n1);
 
 printf("Nota 2: ");
-scanf("%f",&a[i].nota2);
+scanf("%f",&turma[i].n2);
 
 printf("Nota 3: ");
-scanf("%f",&a[i].nota3);
+scanf("%f",&turma[i].n3);
 
-media=(a[i].nota1+a[i].nota2+a[i].nota3)/3;
+media=(turma[i].n1+turma[i].n2+turma[i].n3)/3;
 
 if(media>maiorMedia){
 maiorMedia=media;
-maior=i;
+posMaior=i;
 }
 }
 
-printf("\nAluno com maior media:\n");
-printf("Nome: %s\n",a[maior].nome);
-printf("Nota 1: %.2f\n",a[maior].nota1);
-printf("Nota 2: %.2f\n",a[maior].nota2);
-printf("Nota 3: %.2f\n",a[maior].nota3);
+printf("\nAluno com a maior media:\n");
+printf("Nome: %s\n",turma[posMaior].nomeAluno);
+printf("Notas: %.2f, %.2f, %.2f\n",turma[posMaior].n1,turma[posMaior].n2,turma[posMaior].n3);
 
 return 0;
 }
