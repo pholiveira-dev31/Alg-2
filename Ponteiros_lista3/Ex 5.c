@@ -2,36 +2,36 @@
 
 void extrair_estatisticas(int *vetor,int tamanho,int *min,int *max,float *media){
 
-    int i,soma=0;
+    int idx,s=0;
 
     *min=*vetor;
     *max=*vetor;
 
-    for(i=0;i<tamanho;i++){
+    for(idx=0;idx<tamanho;idx++){
 
-        if(*(vetor+i)<*min)
-            *min=*(vetor+i);
+        if(*(vetor+idx)<*min)
+            *min=*(vetor+idx);
 
-        if(*(vetor+i)>*max)
-            *max=*(vetor+i);
+        if(*(vetor+idx)>*max)
+            *max=*(vetor+idx);
 
-        soma=soma+*(vetor+i);
+        s=s+*(vetor+idx);
     }
 
-    *media=(float)soma/tamanho;
+    *media=(float)s/tamanho;
 }
 
 int main(){
 
-    int vetor[5]={5,8,2,10,4};
-    int min,max;
-    float media;
+    int numeros[5]={5,8,2,10,4};
+    int menorNum,maiorNum;
+    float medResult;
 
-    extrair_estatisticas(vetor,5,&min,&max,&media);
+    extrair_estatisticas(numeros,5,&menorNum,&maiorNum,&medResult);
 
-    printf("Menor: %d\n",min);
-    printf("Maior: %d\n",max);
-    printf("Media: %.2f",media);
+    printf("Minimo: %d\n",menorNum);
+    printf("Maximo: %d\n",maiorNum);
+    printf("Media: %.2f",medResult);
 
     return 0;
 }
