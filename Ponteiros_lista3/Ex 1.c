@@ -2,22 +2,22 @@
 
 #define PI 3.14
 
-void calcular_esfera(float raio,float *area,float *volume){
+void calc_esfera(float r,float *a,float *v){
 
-    *area = 4*PI*raio*raio;
-    *volume = (4.0/3.0)*PI*raio*raio*raio;
+    *a = 4*PI*r*r;
+    *v = (4.0/3.0)*PI*r*r*r;
 }
 
 int main(){
-    float raio,area,volume;
+    float raio,area,vol;
 
     printf("Digite o raio: ");
     scanf("%f",&raio);
 
-    calcular_esfera(raio,&area,&volume);
+    calc_esfera(raio,&area,&vol);
 
-    printf("Area = %.2f\n",area);
-    printf("Volume = %.2f",volume);
+    printf("Area calculada: %.2f\n",area);
+    printf("Volume calculado: %.2f",vol);
 
     return 0;
 }
