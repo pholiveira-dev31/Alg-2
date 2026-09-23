@@ -1,24 +1,24 @@
 #include <stdio.h>
 
-void tempo(int segundos){
-    int h,m,s;
+void converteTempo(int totalSeg){
+    int horas,minutos,segundos;
 
-    h = segundos/3600;
-    segundos = segundos%3600;
+    horas = totalSeg/3600;
+    totalSeg = totalSeg%3600;
 
-    m = segundos/60;
-    s = segundos%60;
+    minutos = totalSeg/60;
+    segundos = totalSeg%60;
 
-    printf("%d horas %d minutos %d segundos",h,m,s);
+    printf("%d h, %d m e %d s",horas,minutos,segundos);
 }
 
 int main(){
-    int segundos;
+    int segEntrada;
 
-    printf("Digite o tempo em segundos: ");
-    scanf("%d",&segundos);
+    printf("Informe os segundos: ");
+    scanf("%d",&segEntrada);
 
-    tempo(segundos);
+    converteTempo(segEntrada);
 
     return 0;
 }
