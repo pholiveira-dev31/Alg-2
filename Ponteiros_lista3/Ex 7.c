@@ -2,36 +2,36 @@
 
 void swap(int *a,int *b){
 
-    int aux;
+    int temp;
 
-    aux=*a;
+    temp=*a;
     *a=*b;
-    *b=aux;
+    *b=temp;
 }
 
-void ordenar(int *vetor,int tamanho){
+void ordenar_vetor(int *v,int tam){
 
-    int *i,*j;
+    int *p1,*p2;
 
-    for(i=vetor;i<vetor+tamanho-1;i++){
+    for(p1=v;p1<v+tam-1;p1++){
 
-        for(j=vetor;j<vetor+tamanho-1-(i-vetor);j++){
+        for(p2=v;p2<v+tam-1-(p1-v);p2++){
 
-            if(*j > *(j+1))
-                swap(j,j+1);
+            if(*p2 > *(p2+1))
+                swap(p2,p2+1);
         }
     }
 }
 
 int main(){
 
-    int vetor[6]={5,2,8,1,3,4};
-    int *p;
+    int array[6]={5,2,8,1,3,4};
+    int *pMostra;
 
-    ordenar(vetor,6);
+    ordenar_vetor(array,6);
 
-    for(p=vetor;p<vetor+6;p++)
-        printf("%d ",*p);
+    for(pMostra=array;pMostra<array+6;pMostra++)
+        printf("%d ",*pMostra);
 
     return 0;
 }
