@@ -8,39 +8,39 @@ float altura;
 };
 
 int main(){
-struct Atleta a[5],aux;
+struct Atleta vet[5],aux;
 int i,j;
 
 for(i=0;i<5;i++){
 printf("Atleta %d\n",i+1);
 
 printf("Nome: ");
-scanf(" %[^\n]",a[i].nome);
+scanf(" %[^\n]",vet[i].nome);
 
 printf("Esporte: ");
-scanf(" %[^\n]",a[i].esporte);
+scanf(" %[^\n]",vet[i].esporte);
 
 printf("Idade: ");
-scanf("%d",&a[i].idade);
+scanf("%d",&vet[i].idade);
 
 printf("Altura: ");
-scanf("%f",&a[i].altura);
+scanf("%f",&vet[i].altura);
 }
 
 for(i=0;i<4;i++){
 for(j=i+1;j<5;j++){
-if(a[i].idade<a[j].idade){
-aux=a[i];
-a[i]=a[j];
-a[j]=aux;
+if(vet[i].idade<vet[j].idade){
+aux=vet[i];
+vet[i]=vet[j];
+vet[j]=aux;
 }
 }
 }
 
-printf("\nAtletas:\n");
+printf("\nAtletas ordenados da maior idade p/ menor:\n");
 
 for(i=0;i<5;i++){
-printf("%s - %d anos\n",a[i].nome,a[i].idade);
+printf("%s - %d anos\n",vet[i].nome,vet[i].idade);
 }
 
 return 0;
