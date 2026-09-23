@@ -1,22 +1,22 @@
 #include <stdio.h>
 
-int idadeDias(int anos,int meses,int dias){
-    return anos*365 + meses*30 + dias;
+int calcDiasVida(int ano,int mes,int dia){
+    return (ano*365) + (mes*30) + dia;
 }
 
 int main(){
-    int a,m,d;
+    int qtdAnos,qtdMeses,qtdDias;
 
     printf("Anos: ");
-    scanf("%d",&a);
+    scanf("%d",&qtdAnos);
 
     printf("Meses: ");
-    scanf("%d",&m);
+    scanf("%d",&qtdMeses);
 
     printf("Dias: ");
-    scanf("%d",&d);
+    scanf("%d",&qtdDias);
 
-    printf("Idade em dias: %d",idadeDias(a,m,d));
+    printf("Total em dias: %d",calcDiasVida(qtdAnos,qtdMeses,qtdDias));
 
     return 0;
 }
