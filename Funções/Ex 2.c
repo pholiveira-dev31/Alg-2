@@ -1,21 +1,21 @@
 #include <stdio.h>
 #include <math.h>
 
-void baskara(float a,float b,float c){
-    float delta,x1,x2;
+void equacaoBhaskara(float a,float b,float c){
+    float d,x1,x2;
 
-    delta = b*b - 4*a*c;
+    d = b*b - 4*a*c;
 
-    if(delta < 0){
+    if(d < 0){
         printf("Nao existem raizes reais\n");
     }
-    else if(delta == 0){
+    else if(d == 0){
         x1 = -b/(2*a);
-        printf("Raiz: %.2f\n",x1);
+        printf("Raiz unica: %.2f\n",x1);
     }
     else{
-        x1 = (-b + sqrt(delta))/(2*a);
-        x2 = (-b - sqrt(delta))/(2*a);
+        x1 = (-b + sqrt(d))/(2*a);
+        x2 = (-b - sqrt(d))/(2*a);
 
         printf("X1 = %.2f\n",x1);
         printf("X2 = %.2f\n",x2);
@@ -23,12 +23,12 @@ void baskara(float a,float b,float c){
 }
 
 int main(){
-    float a,b,c;
+    float coefA,coefB,coefC;
 
-    printf("Digite a,b,c: ");
-    scanf("%f%f%f",&a,&b,&c);
+    printf("Digite a, b e c: ");
+    scanf("%f%f%f",&coefA,&coefB,&coefC);
 
-    baskara(a,b,c);
+    equacaoBhaskara(coefA,coefB,coefC);
 
     return 0;
 }
